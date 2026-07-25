@@ -1,0 +1,145 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  box-sizing: border-box;
+}
+html {
+  font-size: 12px;
+  scroll-behavior: smooth;
+}
+:root {
+  --text: #6b6375;
+  --text-h: #08060d;
+  --bg: #f7f7f5;
+  --cards: #e0e0e3;
+  --line: #b8b8b8;
+  --contacts: #e7e7e3;
+}
+:root[data-theme="dark"] {
+  --text: #cdcdcd;
+  --text-h: #ececec;
+  --bg: #111218;
+  --cards: #1e2337;
+  --links: #07acff;
+  --contacts: #222222;
+}
+:root[data-theme="dark"] #social .button-icon {
+  filter: invert(1) brightness(2);
+}
+:root[data-theme="light"] {
+  --text: #6b6375;
+  --text-h: #08060d;
+  --bg: #f7f7f5;
+  --cards: #e0e0e3;
+  --links: #0076b6;
+  --contacts: #e7e7e3;
+}
+:root.dark-theme #social .button-icon {
+  filter: invert(1) brightness(2);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --text: #cdcdcd;
+    --text-h: #ececec;
+    --bg: #111218;
+    --cards: #1e2337;
+    --links: #07acff;
+    --contacts: #222222;
+  }
+  :root:not([data-theme="light"]) #social .button-icon {
+    filter: invert(1) brightness(2);
+  }
+}
+
+#root {
+  max-width: 1440px;
+  /* max-width: 100%; */
+  margin: 0 auto;
+  border-inline: 1px solid var(--border);
+  min-height: 100svh;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  transition:
+    background 0.3s,
+    color 0.3s;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+section {
+  margin-top: 100px;
+  padding: 0 clamp(20px, 5vw, 70px);
+}
+
+.section-num {
+  margin: 0 0 40px 0;
+}
+h1 {
+  color: var(--text-h);
+  font-size: 56px;
+  letter-spacing: -1.68px;
+  margin: 32px 0;
+  @media (max-width: 1024px) {
+    font-size: 36px;
+    margin: 20px 0;
+  }
+}
+h2 {
+  color: var(--text-h);
+  font-size: clamp(48px, 5vw, 64px);
+  line-height: 1;
+  letter-spacing: -0.06em;
+  margin: 20px 0 60px 0;
+}
+h3 {
+  color: var(--text-h);
+  font-size: 2.3rem;
+}
+h5 {
+  color: var(--text);
+  text-transform: uppercase;
+  font-size: 1rem;
+}
+p {
+  font-size: 1.5rem;
+  color: var(--text);
+  margin: 0;
+}
+
+code,
+.counter {
+  font-family: var(--mono);
+  display: inline-flex;
+  border-radius: 4px;
+}
+
+code {
+  font-size: 15px;
+  line-height: 135%;
+  padding: 4px 8px;
+  background: var(--code-bg);
+}
+@media (max-width: 850px) {
+  section:first-child {
+    margin: 40px 0;
+  }
+}
+
+@media (max-width: 560px) {
+
+  h1 {
+    font-size: 45px;
+  }
+  h2 {
+    font-size: 3.3rem;
+    margin: 0 0 40px;
+  }
+  h3 {
+    font-size: 2.3rem;
+  }
+}

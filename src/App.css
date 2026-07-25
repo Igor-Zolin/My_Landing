@@ -1,0 +1,424 @@
+header {
+  height: 80px;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--line);
+  align-items: center;
+  padding: 0 60px;
+}
+
+nav a {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 1.25rem;
+  font-weight: 200;
+}
+nav a:hover {
+  text-decoration: underline;
+}
+.text-h {
+  color: var(--text-h);
+}
+
+.logo-div svg {
+  aspect-ratio: 184/128;
+}
+
+.logo-div svg path {
+  fill: var(--text-h);
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+.logo-div {
+  align-items: center;
+  gap: 20px;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.desktop-navigation {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav-button {
+  display: none;
+}
+.mobile-nav {
+  display: none;
+}
+.mobile-navigation {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  align-items: end;
+  padding: 30px;
+}
+
+.mobile-nav a {
+  font-size: 1.5rem;
+  padding: 15px;
+}
+.mobile-nav a:hover {
+  border: 1px dashed var(--text-h);
+}
+
+.themeButton {
+  background-color: var(--bg);
+  border: none;
+  transition:
+    background 0.3s,
+    color 0.3s;
+}
+.themeButton svg path {
+  fill: var(--text);
+}
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.code-card {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  max-width: 450px;
+  padding: 20px;
+  color: #e8e8e8;
+  background: #171717;
+  border: 1px solid #171717;
+  font:
+    13px/1.45 Consolas,
+    "Courier New",
+    monospace;
+}
+
+.me {
+  display: flex;
+  gap: clamp(50px, 6vw, 100px);
+  align-items: center;
+}
+
+.me-hero {
+  margin: 0 0 30px;
+}
+
+.about-me {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-me p {
+  line-height: 1.5;
+  max-width: 650px;
+  margin: 0 0 30px;
+}
+
+.me img {
+  aspect-ratio: 4/5;
+  width: 100%;
+  max-width: 450px;
+  object-fit: cover;
+  padding: 0 0 15px 0;
+}
+
+.me-buttons {
+  gap: 15px;
+}
+.me a {
+  padding: 15px 20px;
+  font-size: 1.5rem;
+  transition:
+    background 0.3s,
+    color 0.3s;
+}
+.contact-button {
+  background-color: var(--text-h);
+  color: var(--bg);
+  border: none;
+}
+.contact-button:hover {
+  background-color: var(--bg);
+  color: var(--text-h);
+  border: 1px solid var(--text-h);
+  margin: 0 0 0 -1px;
+}
+
+.projects-button {
+  background-color: var(--bg);
+  color: var(--text-h);
+  border: 1px solid var(--text-h);
+}
+.projects-button:hover {
+  background-color: var(--text-h);
+  color: var(--bg);
+}
+
+.myName {
+  font-size: clamp(48px, 6.5vw, 96px);
+  line-height: 0.9;
+  letter-spacing: -0.06em;
+}
+
+.code-comment {
+  margin-bottom: 7px;
+  color: #898989;
+}
+
+.code-card code {
+  font: inherit;
+}
+
+.code-card b {
+  color: #b9ff66;
+  font-weight: 400;
+}
+
+.about-body {
+  gap: 40px;
+}
+.about-text {
+  margin: 0 0 25px;
+}
+.stats-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 100%;
+}
+.stats li {
+  border-top: 1px solid var(--line);
+  border-right: 1px solid var(--line);
+  padding: 15px 0 10px 25px;
+}
+.stats li p {
+  font-size: 1rem;
+}
+
+.terminal-placeholder {
+  aspect-ratio: 4/3;
+  min-width: 240px;
+  color: #d9d9d9;
+  background: #1e1e1e;
+  border: 1px solid #1e1e1e;
+  font:
+    13px/1.6 Consolas,
+    "Courier New",
+    monospace;
+}
+.terminal-bar {
+  height: 42px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 0 15px;
+  background: #2b2b2b;
+}
+.terminal-bar i {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #777;
+}
+.terminal-bar span {
+  margin-left: 7px;
+  color: #999;
+  font-size: 11px;
+}
+.terminal-content {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding: 28px;
+}
+.terminal-content .terminal-success {
+  color: #b9ff66;
+}
+.terminal-content small {
+  margin-top: 30px;
+  color: #858585;
+  font:
+    11px/1.5 Arial,
+    sans-serif;
+}
+
+#projects a {
+  font-size: 1.5rem;
+  color: var(--text-h);
+  margin: 0 20px 0 0;
+}
+.projects-list {
+  display: grid;
+  gap: 80px;
+}
+
+.project-card {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: clamp(1rem, 6vw, 2.5rem);
+  align-items: center;
+}
+.project-card-reverse .case-media {
+  order: 2;
+}
+.projects-list img {
+  width: 100%;
+  max-width: 690px;
+}
+
+.project-info {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.project-stack {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px;
+  font:
+    1rem/1.7 Consolas,
+    "Courier New",
+    monospace;
+  border: 1px dashed var(--line);
+}
+
+.road-item {
+  display: grid;
+  grid-template-columns: 0.5fr 1.4fr 1.1fr;
+  border-bottom: 1px solid var(--line);
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+.road-item div {
+  text-align: center;
+}
+
+.stack {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.stack-item {
+  width: 100%;
+  border: 1px solid var(--line);
+  text-align: left;
+  padding: 30px;
+  min-height: 230px;
+}
+.stack-item h5 {
+  text-align: left;
+}
+.stack-item h3 {
+  margin: 40px 0 15px;
+}
+#contacts {
+  background-color: var(--contacts);
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+footer {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+footer p,
+button {
+  font-size: 1rem;
+  color: var(--text);
+}
+
+footer button {
+  background-color: var(--bg);
+  text-decoration: none;
+  border: none;
+}
+footer button:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 850px) {
+  header {
+    padding: 0 clamp(20px, 5vw, 70px);
+  }
+  .desktop-nav {
+    display: none;
+  }
+  .nav-button {
+    display: block;
+    padding: 10px 15px;
+    background-color: var(--bg);
+    color: var(--text-h);
+    border: 2px solid var(--text-h);
+    font-size: 1.25rem;
+  }
+  .mobile-nav {
+    position: absolute;
+    top: 80px;
+    right: 0;
+    left: 0;
+  }
+  .mobile-nav.open {
+    display: block;
+    flex-direction: column;
+    background-color: var(--bg);
+  }
+  .me {
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
+  }
+  .me-buttons {
+    flex-direction: column;
+    width: 100%;
+    margin: 0 auto;
+    max-width: 450px;
+  }
+
+  .project-card,
+  asd {
+    grid-template-columns: 1fr;
+  }
+  .about-body {
+    flex-wrap: wrap;
+  }
+  .terminal-placeholder {
+    width: 100%;
+    aspect-ratio: auto;
+  }
+  .project-card-reverse .case-media {
+    order: 0;
+  }
+
+  .road-item {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  .road-item div {
+    text-align: left;
+  }
+}
+@media (max-width: 710px) {
+  .stack {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 560px) {
+  .projects-list {
+    gap: 60px;
+  }
+  footer > p:nth-child(2) {
+    display: none;
+  }
+}
