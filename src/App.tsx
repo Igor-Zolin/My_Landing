@@ -1,10 +1,9 @@
 import { useState, useEffect } from "react";
 import "./App.css";
 
-import MiraiLogo from "./assets/miraiLogo.webp";
-import MonitorchikiScreen from "./assets/monitorchikiScreen.webp";
-import TTPlazaLogo from "./assets/TTPlazaLogo.jpg";
-import OpenWalletLogo from "./assets/openWallet.webp";
+import ProjectCard from "./components/ProjectCard";
+import { projects } from "./data/projects";
+
 import Me from "./assets/ava.jpg";
 
 function App() {
@@ -296,142 +295,13 @@ function App() {
           <h5>Pet и коммерческие проекты</h5>
           <h2>Проекты, над которыми я работал</h2>
           <div className="projects-list">
-            <article className="project-card">
-              <img
-                className="project-img"
-                src={MiraiLogo}
-                alt="Логотип проекта Mirai Station"
+            {projects.map((project, index) => (
+              <ProjectCard
+                key={project.title}
+                project={project}
+                reverse={index % 2 !== 0}
               />
-              <div className="project-info">
-                <h5>pet-проект · 2026</h5>
-                <h3>Mirai Station</h3>
-                <p>
-                  Веб-приложение в формате Telegram Mini App, разработанное на
-                  React, TypeScript и Vite. Серверная часть реализована на
-                  Node.js и Express с использованием PostgreSQL,
-                  JWT-аутентификации и проверки данных Telegram. В приложении
-                  реализованы игровая система, магазин, инвентарь, экипировка
-                  персонажа, пользовательский маркетплейс и подключение
-                  TON-кошелька через TON Connect.
-                </p>
-                <div>
-                  <ul className="project-stack">
-                    <li>[React]</li>
-                    <li>[TypeScript]</li>
-                    <li>[Node.js]</li>
-                    <li>[express.js]</li>
-                    <li>[PostgreSQL]</li>
-                    <li>[REST API]</li>
-                  </ul>
-                </div>
-                <div>
-                  <a
-                    target="_blank"
-                    href="https://github.com/Igor-Zolin/MiraiStation/"
-                  >
-                    [GitHub]
-                  </a>
-                </div>
-              </div>
-            </article>
-            <article className="project-card project-card-reverse">
-              <img
-                className="case-media"
-                src={TTPlazaLogo}
-                alt="Логотип теннисного клуба"
-              />
-              <div className="project-info">
-                <h5>Коммерческий проект · 2025</h5>
-                <h3>Table Tennis Plaza</h3>
-                <p>
-                  Лендинг для теннисного клуба в Паттайе, разработанный на HTML,
-                  CSS и JavaScript. Реализованы локализация на русский,
-                  английский и тайский языки, фотокарусель и адаптивная вёрстка
-                  с использованием Flexbox и CSS Grid.
-                </p>
-                <div>
-                  <ul className="project-stack">
-                    <li>[HTML]</li>
-                    <li>[CSS]</li>
-                    <li>[JavaScript]</li>
-                  </ul>
-                </div>
-                <div>
-                  <a
-                    target="_blank"
-                    href="https://github.com/Igor-Zolin/Tennis-Plaza-main"
-                  >
-                    [GitHub]
-                  </a>
-                </div>
-              </div>
-            </article>
-            <article className="project-card">
-              <img
-                className=""
-                src={MonitorchikiScreen}
-                alt='Скрин главного экрана сайта "Мониторчики"'
-              />
-              <div className="project-info">
-                <h5>ВУЗовский проект · 2024-2025</h5>
-                <h3>Monitorchiki</h3>
-                <p>
-                  Многостраничный образовательный сайт детского электронного
-                  издания «Мониторчики», разработанный на HTML, CSS и
-                  JavaScript. Проект посвящён интернет-безопасности и цифровой
-                  грамотности. Реализованы адаптивная вёрстка, интерактивные
-                  материалы, модальные слайдеры, викторина, браузерная мини-игра
-                  и загрузка обучающих материалов.
-                </p>
-                <div>
-                  <ul className="project-stack">
-                    <li>[HTML]</li>
-                    <li>[CSS]</li>
-                    <li>[JavaScript]</li>
-                  </ul>
-                </div>
-                <div>
-                  <a
-                    target="_blank"
-                    href="https://github.com/Igor-Zolin/monitorchiki"
-                  >
-                    [GitHub]
-                  </a>
-                  <a target="_blank" href="https://monitorchiki.ru">
-                    [Link]
-                  </a>
-                </div>
-              </div>
-            </article>
-            <article className="project-card project-card-reverse">
-              <img
-                className="case-media"
-                src={OpenWalletLogo}
-                alt="Логотип проекта OpenWallet"
-              />
-              <div className="project-info">
-                <h5>В разработке</h5>
-                <h3>OpenWallet</h3>
-                <p>
-                  Веб-версия некастодиального кошелька для сети TON с поддержкой
-                  мнемонических фраз, TON Connect, управления активами и
-                  персонализации интерфейса. Разрабатывается на React,
-                  TypeScript и WalletKit.
-                </p>
-                <div>
-                  <ul className="project-stack">
-                    <li>[React]</li>
-                    <li>[TypeScript]</li>
-                    <li>[Node.js]</li>
-                  </ul>
-                </div>
-                <div>
-                  <a href="https://github.com/Igor-Zolin/OpenWallet">
-                    [GitHub]
-                  </a>
-                </div>
-              </div>
-            </article>
+            ))}
           </div>
         </section>
         <section>
