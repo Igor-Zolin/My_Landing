@@ -10,30 +10,37 @@ html {
 }
 :root {
   --text: #6b6375;
-  --text-h: #08060d;
+  --text-h: #171717;
   --bg: #f7f7f5;
   --cards: #e0e0e3;
   --line: #b8b8b8;
   --contacts: #e7e7e3;
+  --icons: #000000;
+  --code-bg: #171717;
 }
 :root[data-theme="dark"] {
   --text: #cdcdcd;
   --text-h: #ececec;
-  --bg: #111218;
+  --bg: #171717;
   --cards: #1e2337;
   --links: #07acff;
   --contacts: #222222;
+  --icons: #ffffff;
+  --code-bg: #1e1e1e;
+
 }
 :root[data-theme="dark"] #social .button-icon {
   filter: invert(1) brightness(2);
 }
 :root[data-theme="light"] {
   --text: #6b6375;
-  --text-h: #08060d;
+  --text-h: #171717;
   --bg: #f7f7f5;
   --cards: #e0e0e3;
   --links: #0076b6;
   --contacts: #e7e7e3;
+  --icons: #000000;
+  --code-bg: #171717;
 }
 :root.dark-theme #social .button-icon {
   filter: invert(1) brightness(2);
@@ -43,10 +50,13 @@ html {
   :root:not([data-theme="light"]) {
     --text: #cdcdcd;
     --text-h: #ececec;
-    --bg: #111218;
+    --bg: #171717;
     --cards: #1e2337;
     --links: #07acff;
     --contacts: #222222;
+    --icons: #ffffff;
+    --code-bg: #1e1e1e;
+
   }
   :root:not([data-theme="light"]) #social .button-icon {
     filter: invert(1) brightness(2);
@@ -57,7 +67,6 @@ html {
   max-width: 1440px;
   /* max-width: 100%; */
   margin: 0 auto;
-  border-inline: 1px solid var(--border);
   min-height: 100svh;
   box-sizing: border-box;
 }
@@ -72,8 +81,8 @@ body {
 }
 
 section {
-  margin-top: 100px;
-  padding: 0 clamp(20px, 5vw, 70px);
+  padding: 100px clamp(20px, 5vw, 70px);
+  border-bottom: 1px solid var(--line);
 }
 
 .section-num {
@@ -91,7 +100,7 @@ h1 {
 }
 h2 {
   color: var(--text-h);
-  font-size: clamp(48px, 5vw, 64px);
+  font-size: clamp(48px, 6vw, 72px);
   line-height: 1;
   letter-spacing: -0.06em;
   margin: 20px 0 60px 0;

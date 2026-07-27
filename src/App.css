@@ -273,6 +273,8 @@ nav {
 .projects-list img {
   width: 100%;
   max-width: 690px;
+  aspect-ratio: 16/9;
+  object-fit: cover;
 }
 
 .project-info {
@@ -283,6 +285,7 @@ nav {
 
 .project-stack {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 10px;
   padding: 14px;
@@ -316,23 +319,72 @@ nav {
   padding: 30px;
   min-height: 230px;
 }
-.stack-item h5 {
-  text-align: left;
-}
+
 .stack-item h3 {
   margin: 40px 0 15px;
 }
 #contacts {
+  display: grid;
+  grid-template-columns: 1.5fr 0.5fr;
   background-color: var(--contacts);
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  gap: 80px;
+}
+#contacts .section-num {
+  color: var(--text);
+  text-transform: uppercase;
+  font-size: 1rem;
+  margin: 0 0 80px 0;
+}
+#contacts h2 {
+  font-size: clamp(48px, 6vw, 88px);
+}
+
+.contacts-copy p {
+  margin: 0 0 50px 0;
+}
+.contact-email {
+  font-size: clamp(24px, 3vw, 48px);
+  color: var(--text-h);
+}
+.contacts-links {
+  align-self: end;
+  border-top: 1px solid var(--text-h);
+}
+.contacts-links a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between  ;
+  font-size: 1.5rem;
+  width: 100%;
+  padding: 15px 0;
+  border-bottom: 1px solid var(--line);
+  color: var(--text-h);
+  text-decoration: none;
+}
+.contacts-links a:hover {
+  text-decoration: underline;
+}
+.linkName svg {
+  width: 30px;
+}
+.linkName svg path {
+  fill: var(--icons);
+}
+.linkName {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
 }
 
 footer {
-  height: 50px;
+  padding: 0 clamp(20px, 5vw, 70px);;
+  height: 70px;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 footer p,
 button {
@@ -375,6 +427,9 @@ footer button:hover {
     flex-direction: column;
     background-color: var(--bg);
   }
+  .themeButton {
+    margin: 0 clamp(5px, 2vw, 20px);
+  }
   .me {
     flex-wrap: wrap;
     flex-direction: column-reverse;
@@ -386,9 +441,11 @@ footer button:hover {
     max-width: 450px;
   }
 
-  .project-card,
-  asd {
+  .project-card, #contacts {
     grid-template-columns: 1fr;
+  }
+  .projects-list img {
+    max-width: 850px;
   }
   .about-body {
     flex-wrap: wrap;
@@ -407,6 +464,9 @@ footer button:hover {
   }
   .road-item div {
     text-align: left;
+  }
+  #contacts {
+    grid-template-columns: 1fr;
   }
 }
 @media (max-width: 710px) {
