@@ -166,7 +166,6 @@ function App() {
               <li>
                 <a href="#contacts">Контакты</a>
               </li>
-              <li></li>
             </ul>
           </nav>
           <button
@@ -186,20 +185,21 @@ function App() {
           </button>
           <nav
             className={`mobile-nav ${isMenuOpen ? "open" : ""}`}
+            id="mobile-navigation"
             aria-label="Мобильная навигация"
           >
             <ul className="mobile-navigation">
               <li>
-                <a href="#about">Обо мне &rarr;</a>
+                <a href="#about" onClick={() => setIsMenuOpen(false)}>Обо мне &rarr;</a>
               </li>
               <li>
-                <a href="#projects">Портфолио &rarr;</a>
+                <a href="#projects" onClick={() => setIsMenuOpen(false)}>Портфолио &rarr;</a>
               </li>
               <li>
-                <a href="#stack">Стек &rarr;</a>
+                <a href="#stack" onClick={() => setIsMenuOpen(false)}>Стек &rarr;</a>
               </li>
               <li>
-                <a href="#contacts">Контакты &rarr;</a>
+                <a href="#contacts" onClick={() => setIsMenuOpen(false)}>Контакты &rarr;</a>
               </li>
             </ul>
           </nav>
@@ -223,7 +223,7 @@ function App() {
           </div>
           <div className="about-me">
             <h5 className="me-hero">Кто я</h5>
-            <h5>[Студент · Frontend-разработчик · Ищу стажировку]</h5>
+            <p>[Студент · Frontend-разработчик · Ищу стажировку]</p>
             <h1 className="myName">Игорь, Frontend-разработчик</h1>
             <p className="lead">
               Учусь на 4 курсе университета по направлению "Веб-технологии".
@@ -243,8 +243,8 @@ function App() {
           </div>
         </section>
         <section id="about">
-          <p className="section-num">01 / обо мне</p>
-          <h5>короткое позиционирование</h5>
+          <h5 className="section-num">01 / обо мне</h5>
+          <p>короткое позиционирование</p>
           <h2>
             Создаю понятные и адаптивные интерфейсы и постоянно прокачиваю
             собственные скиллы
@@ -291,8 +291,8 @@ function App() {
           </div>
         </section>
         <section id="projects">
-          <p className="section-num">02 / проекты</p>
-          <h5>Pet и коммерческие проекты</h5>
+          <h5 className="section-num">02 / проекты</h5>
+          <p>Pet и коммерческие проекты</p>
           <h2>Проекты, над которыми я работал</h2>
           <div className="projects-list">
             {projects.map((project, index) => (
@@ -305,8 +305,8 @@ function App() {
           </div>
         </section>
         <section>
-          <p className="section-num">03 / обучение и практика</p>
-          <h5>образование, активности</h5>
+          <h5 className="section-num">03 / обучение и практика</h5>
+          <p>образование, активности</p>
           <h2>Мой путь развития в Web</h2>
           <ul className="road">
             <li className="row road-item">
@@ -339,7 +339,7 @@ function App() {
           </ul>
         </section>
         <section id="stack">
-          <p className="section-num">04 / технический стек</p>
+          <h5 className="section-num">04 / технический стек</h5>
           <h5>что я уже использую</h5>
           <h2>Инструменты и технологии</h2>
           <ul className="stack">
@@ -370,10 +370,10 @@ function App() {
         </section>
         <section id="contacts">
           <div className="contacts-copy">
-            <p className="section-num">05 / контакты</p>
-            <h5>открыт к стажировке</h5>
+            <h5 className="section-num">05 / контакты</h5>
+            <p>открыт к стажировке</p>
             <h2>
-              Буду рад познакомиться <br></br>с вашей командой
+              Буду рад <span className="break-word">познакомиться</span> <br></br>с вашей командой
             </h2>
             <p>
               Рассматриваю стажировки и Junior-позиции в Москве с удалённым или

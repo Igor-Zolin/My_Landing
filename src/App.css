@@ -70,6 +70,7 @@ nav {
 
 .themeButton {
   background-color: var(--bg);
+  margin: 0 clamp(5px, 2vw, 20px);
   border: none;
   transition:
     background 0.3s,
@@ -352,6 +353,9 @@ nav {
   align-self: end;
   border-top: 1px solid var(--text-h);
 }
+.contacts-links, .contacts-copy {
+  min-width: 0;
+}
 .contacts-links a {
   display: flex;
   align-items: center;
@@ -427,9 +431,6 @@ footer button:hover {
     flex-direction: column;
     background-color: var(--bg);
   }
-  .themeButton {
-    margin: 0 clamp(5px, 2vw, 20px);
-  }
   .me {
     flex-wrap: wrap;
     flex-direction: column-reverse;
@@ -466,7 +467,7 @@ footer button:hover {
     text-align: left;
   }
   #contacts {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 }
 @media (max-width: 710px) {
